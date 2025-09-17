@@ -1,7 +1,9 @@
 export const tokenizeWithIndices = (text: string) => {
   const tokens: { text: string; start: number; end: number; isWord: boolean }[] = [];
   const re = /(\s+)|([^\s]+)/g;
+  
   let m: RegExpExecArray | null;
+  
   while ((m = re.exec(text)) !== null) {
     const tokenText = m[0];
     const start = m.index;

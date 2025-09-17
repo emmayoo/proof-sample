@@ -6,7 +6,15 @@ interface ButtonProps {
   className?: string;
 }
 
-export default function Button({ onClick, children, type = 'button', active = true, className, ...props }: ButtonProps) {
+export function Button({ onClick, children, type = 'button', active = true, className, ...props }: ButtonProps) {
+  const handleClick = (e: React.MouseEvent) => {
+    if (type === 'button') {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+    onClick();
+  }
+  
   return (
     <button
       className={`
@@ -15,7 +23,7 @@ export default function Button({ onClick, children, type = 'button', active = tr
         ${active ? 'bg-blue-600 text-white' : 'hover:bg-gray-50'}
         ${className}
       `}
-      onClick={onClick}
+      onClick={handleClick}
       type={type}
       {...props}
     >
