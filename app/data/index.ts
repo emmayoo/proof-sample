@@ -1,19 +1,12 @@
 import { GrammarRule } from "@/app/types";
 
 export const SAMPLE_ESSAY = 
-`This is teh sample text with some recieve and wierd mistakes. 
-I has a plan to go there, but it might not work out. 
-He go to the market every morning. 
-This is a very unique opportunity in order to learn more. 
-Sometimes people definately forget to seperate their tasks properly. 
-It is important to use correct grammar in order to communicate clearly. 
-I has never seen such a wierd combination of words before. 
-Trying to write in a very unique style can sometimes confuse readers. 
-Remember to always recieve feedback and apply it wisely. 
-Even small mistakes like teh wrong spelling can affect readability. 
-Many students struggle with writing coherent sentences in order to express ideas clearly. 
-Teachers often point out grammar mistakes like I has and He go in their essays. 
-Improving writing skills requires practice, feedback, and a very unique approach to each topic. 
+`The city was buzzing with people going about they’re lifes, \
+shops clozed too early and some resturants didnt even bother too open on time. \
+Walking down the street, a dog barked loudly at it’s own shadow, while a group of \
+teenagers were laughing way too hard at jokes that made no sense what so ever. \
+The weather was kind of chilly, but nobody seem to care, they just kept scrolling on they phones, \
+ignoring the trafic noise and the sirens blarring in the backround.
 `;
 
 export const RULES: GrammarRule[] = [

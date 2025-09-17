@@ -15,3 +15,15 @@ export interface ErrorRange {
   type: GrammarErrorType;
   info?: string;
 }
+
+export type CorrectionChangeType = "replace" | "insert" | "delete";
+
+export interface CorrectionPair {
+  original: string;
+  corrected: string;
+  originalStart?: number;
+  originalEnd?: number;
+  correctedStart?: number;
+  correctedEnd?: number;
+  type: CorrectionChangeType;
+}

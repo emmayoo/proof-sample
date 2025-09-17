@@ -20,7 +20,7 @@ export default function Page() {
   const callCheckApi = useCallback(async (txt: string) => {
     setChecking(true);
     try {
-      const res = await fetch("/api/grammar-check", {
+      const res = await fetch("/api/ai-check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: txt }),
