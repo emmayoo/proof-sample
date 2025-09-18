@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useMemo } from "react";
 import { Button } from "@/app/components";
 import { SAMPLE_ESSAY } from "@/app/data";
 import { tokenizeWithIndices } from "@/app/utils";
@@ -26,9 +26,11 @@ export default function Page() {
         body: JSON.stringify({ text: txt }),
       });
       const json = await res.json();
+      console.log(json);
       let errs: ErrorRange[] = json.errors || [];
       errs = errs.filter((e) => !ignoredRef.current.has(e.word.toLowerCase()));
       setErrors(errs);
+      setMode("view");
     } catch (err) {
       console.error("check api error", err);
     } finally {
@@ -36,15 +38,18 @@ export default function Page() {
     }
   }, []);
 
-  const debouncedCheck = useCallback(
-    (txt: string) => {
-      if (timerRef.current) clearTimeout(timerRef.current);
-      timerRef.current = window.setTimeout(() => {
-        callCheckApi(txt);
-      }, 500);
-    },
-    [callCheckApi]
-  );
+  const recalculateErrorBoundaries = useCallback((err: ErrorRange, overlappedErrorIndex: number) => {
+    let errs: ErrorRange[] = [...errors];
+    let newEnd: number;
+    if (err.suggestion) {
+      newEnd = err.start + err.suggestion.length;
+      errs[overlappedErrorIndex] = { ...err, end: newEnd };
+    } else {
+      errs = errs.slice(0, overlappedErrorIndex).concat(errs.slice(overlappedErrorIndex + 1));
+    }
+    console.log(errs);
+    setErrors(errs);
+  }, [errors]);
 
   useEffect(() => {
     return () => {
@@ -53,17 +58,22 @@ export default function Page() {
   }, []);
 
   const handleSubmit = async () => {
-    setMode("view");
     ignoredRef.current.clear();
     await callCheckApi(text);
   };
   
-  const handleAccept = (err: ErrorRange, replacement: string) => {
-    const before = text.slice(0, err.start);
+  const handleAccept = (err: ErrorRange, overlappedErrorIndex: number)  => {
+    // recalculateErrorBoundaries(err, overlappedErrorIndex);
+    const before = text.slice(0, err.start - 1);
     const after = text.slice(err.end);
-    const newText = before + replacement + after;
-    setText(newText);
-    debouncedCheck(newText);
+    const newText = before + err.suggestion + after;
+    console.log(before);
+    console.log(err.suggestion);
+    console.log(after);
+    console.log(newText);
+    setTimeout(() => {
+      setText(newText);
+    }, 100);
   };
 
   const handleIgnore = (err: ErrorRange) => {
@@ -71,7 +81,7 @@ export default function Page() {
     setErrors((prev) => prev.filter((e) => !(e.start === err.start && e.end === err.end)));
   };
 
-  const tokens = tokenizeWithIndices(text);
+  const tokens  = useMemo(() => tokenizeWithIndices(text), [text]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -106,22 +116,23 @@ export default function Page() {
                     placeholder="Write something..."
                     className="w-full h-60 p-3 text-sm border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <Button onClick={handleSubmit}>Submit</Button>
+                  <Button active={!checking} onClick={handleSubmit}>{checking ? "Checking..." : "Submit"}</Button>
                 </>
               ) : (
                 <div className="p-3 min-h-[200px] whitespace-pre-wrap text-sm leading-relaxed">
                   {tokens.map((t, i) => {
                     if (!t.isWord) return <span key={i}>{t.text}</span>;
-                    const overlapped = errors.find(
+                    const overlappedErrorIndex = errors.findIndex(
                       (e) => e.start < t.end && e.end > t.start
                     );
+                    const overlapped = overlappedErrorIndex !== -1 ? errors[overlappedErrorIndex] : null;
                     if (overlapped) {
                       return (
                         <ErrorWord
                           key={i}
                           text={t.text}
                           error={overlapped}
-                          onAccept={(replacement) => handleAccept(overlapped, replacement)}
+                          onAccept={() => handleAccept(overlapped, overlappedErrorIndex)}
                           onIgnore={() => handleIgnore(overlapped)}
                         />
                       );

@@ -1,0 +1,25 @@
+[{
+        "start": 24,
+        "end": 26,
+        "suggestion": "were",
+        "word": "was",
+        "type": "grammar",
+        "info": "Subject-verb agreement. The plural subject 'people' requires the plural verb 'were'."
+    },
+    {
+        "start": 39,
+        "end": 43,
+        "suggestion": "",
+        "word": "like",
+        "type": "style",
+        "info": "The word 'like' is informal and unidiomatic when used to introduce an adverbial phrase of manner. It should be removed."
+    },
+    {
+        "start": 49,
+        "end": 54,
+        "suggestion": "quietly",
+        "word": "quite",
+        "type": "grammar",
+        "info": "Incorrect word form. An adverb 'quietly' is needed to modify the verb 'sitting'. 'Quite' is an adverb meaning 'to a considerable extent' or an adjective meaning 'silent'."
+    }
+]

@@ -1,12 +1,13 @@
 import { GrammarRule } from "@/app/types";
 
 export const SAMPLE_ESSAY = 
-`The city was buzzing with people going about they’re lifes, \
-shops clozed too early and some resturants didnt even bother too open on time. \
-Walking down the street, a dog barked loudly at it’s own shadow, while a group of \
-teenagers were laughing way too hard at jokes that made no sense what so ever. \
-The weather was kind of chilly, but nobody seem to care, they just kept scrolling on they phones, \
-ignoring the trafic noise and the sirens blarring in the backround.
+`The people in the park was all sitting like very quite \
+and then suddenly a dog runned across the grass and it bark so loud. \
+everyone look at it but nobody was doing nothing, it just keep run and the owner was like shouting \
+“come back here stupid” but he dont listen and then the child start crying cause \
+she think the dog going to bite but actually it was just wanting play. \
+the weather also not very good, like kind of sunny but cloudy at same time, \
+which make it feel annoying atmosphere and i didnt like it much, so i lefted early.\
 `;
 
 export const RULES: GrammarRule[] = [
