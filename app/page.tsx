@@ -8,20 +8,29 @@ export default function Page() {
       title: "문법 검사기",
       description: "문법, 맞춤법, 스타일 오류를 실시간으로 검사하고 수정하세요",
       href: "/grammar-check",
-      icon: "📝"
-    }
-    // 나중에 추가할 도구들...
+      icon: "📝",
+    },
+    {
+      title: "메인",
+      description: "메인 페이지",
+      href: "/main",
+      icon: "🏠",
+    },
+    {
+      title: "로그인",
+      description: "로그인 페이지",
+      href: "/login",
+      icon: "🔒",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Samples
-          </h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Samples</h1>
         </div>
-        
+
         <div className="space-y-3">
           {tools.map((tool, index) => (
             <Link
@@ -39,8 +48,18 @@ export default function Page() {
                     {tool.description}
                   </p>
                 </div>
-                <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg
+                  className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
                 </svg>
               </div>
             </Link>
