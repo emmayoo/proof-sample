@@ -161,7 +161,7 @@ export default function Page() {
               <div className="space-y-4">
                 <div className="bg-white rounded-lg p-4">
                   <h3 className="font-semibold text-gray-800 mb-3">
-                    Today's Schedule
+                    Today&apos;s Schedule
                   </h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">

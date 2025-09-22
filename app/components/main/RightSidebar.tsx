@@ -100,7 +100,7 @@ export function RightSidebar() {
         <CardHeader className="pb-3">
           <div className="flex items-center justify-between">
             <CardTitle className="text-lg font-semibold text-gray-800">
-              Today's timeline
+              Today&apos;s timeline
             </CardTitle>
           </div>
         </CardHeader>

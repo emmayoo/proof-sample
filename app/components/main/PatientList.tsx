@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/app/components/main/ui/card";
 import { Button } from "@/app/components/main/ui/button";
-import { ChevronDown, User, Clock } from "lucide-react";
+import { ChevronDown, Clock } from "lucide-react";
 
 interface Patient {
   id: string;
@@ -63,7 +63,7 @@ export function PatientList({
       <CardHeader className="pb-3">
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg font-semibold text-gray-800">
-            Patient's list
+            Patient&apos;s list
           </CardTitle>
           <Button variant="outline" size="sm" className="text-gray-600">
             Today

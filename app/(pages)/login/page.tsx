@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function LoginPage() {
   return (
@@ -20,7 +21,7 @@ export default function LoginPage() {
         {/* 로고 섹션 */}
         <div className="mb-12 animate-fadeInUp">
           <div className="flex items-center justify-center mb-4">
-            <img src="/puroo-logo.png" alt="PUROO" className="h-20 w-auto" />
+            <Image src="/puroo-logo.png" alt="PUROO" className="h-20 w-auto" />
           </div>
         </div>
 
@@ -31,7 +32,7 @@ export default function LoginPage() {
         >
           {/* 카카오톡 로그인 */}
           <button className="w-full bg-white border border-gray-200 rounded-lg px-6 py-4 flex items-center justify-center gap-3 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 hover-lift">
-            <img src="/kakao.png" alt="KakaoTalk" className="w-6 h-6" />
+            <Image src="/kakao.png" alt="KakaoTalk" className="w-6 h-6" />
             <span className="text-gray-800 font-medium">
               카카오톡으로 시작하기
             </span>
@@ -39,13 +40,13 @@ export default function LoginPage() {
 
           {/* 네이버 로그인 */}
           <button className="w-full bg-white border border-gray-200 rounded-lg px-6 py-4 flex items-center justify-center gap-3 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 hover-lift">
-            <img src="/naver.png" alt="Naver" className="w-6 h-6" />
+            <Image src="/naver.png" alt="Naver" className="w-6 h-6" />
             <span className="text-gray-800 font-medium">네이버로 시작하기</span>
           </button>
 
           {/* 구글 로그인 */}
           <button className="w-full bg-white border border-gray-200 rounded-lg px-6 py-4 flex items-center justify-center gap-3 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 hover-lift">
-            <img src="/google.png" alt="Google" className="w-6 h-6" />
+            <Image src="/google.png" alt="Google" className="w-6 h-6" />
             <span className="text-gray-800 font-medium">구글로 시작하기</span>
           </button>
         </div>

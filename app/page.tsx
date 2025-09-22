@@ -32,7 +32,7 @@ export default function Page() {
         </div>
 
         <div className="space-y-3">
-          {tools.map((tool, index) => (
+          {tools.map((tool) => (
             <Link
               key={tool.href}
               href={tool.href}
