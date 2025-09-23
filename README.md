@@ -15,3 +15,4 @@ pnpm dev
 - [`/grammar-check`](https://proof-sample.vercel.app/grammar-check) - 문법 검사기
 - [`/main`](https://proof-sample.vercel.app/main) - 메인 페이지
 - [`/login`](https://proof-sample.vercel.app/login) - 로그인 페이지
+- [`/assignment`](https://proof-sample.vercel.app/assignment) - 과제 페이지

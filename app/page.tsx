@@ -8,7 +8,7 @@ export default function Page() {
       title: "문법 검사기",
       description: "문법, 맞춤법, 스타일 오류를 실시간으로 검사하고 수정하세요",
       href: "/grammar-check",
-      icon: "📝",
+      icon: "🔍",
     },
     {
       title: "메인",
@@ -21,6 +21,12 @@ export default function Page() {
       description: "로그인 페이지",
       href: "/login",
       icon: "🔒",
+    },
+    {
+      title: "과제",
+      description: "과제 페이지",
+      href: "/assignment",
+      icon: "📝",
     },
   ];
 
