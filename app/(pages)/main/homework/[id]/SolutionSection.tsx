@@ -134,8 +134,23 @@ export default function SolutionSection({ homeworkId, solution }: SolutionSectio
       setShowPopper(true)
     }
 
+    // 모바일에서 기본 선택 메뉴 방지
+    const handleContextMenu = (e: Event) => {
+      e.preventDefault()
+    }
+
+    const textContentElement = containerRef.current?.querySelector('.text-content')
+    if (textContentElement) {
+      textContentElement.addEventListener('contextmenu', handleContextMenu)
+    }
+
     document.addEventListener('selectionchange', handleSelection)
-    return () => document.removeEventListener('selectionchange', handleSelection)
+    return () => {
+      document.removeEventListener('selectionchange', handleSelection)
+      if (textContentElement) {
+        textContentElement.removeEventListener('contextmenu', handleContextMenu)
+      }
+    }
   }, [showPopper, refs])
 
   const addToVocab = async () => {
@@ -338,13 +353,15 @@ export default function SolutionSection({ homeworkId, solution }: SolutionSectio
 
           <div
             className="text-content rounded-lg bg-gray-50 p-4 leading-relaxed whitespace-pre-wrap text-gray-800"
-            style={{
-              WebkitUserSelect: 'text',
-              userSelect: 'text',
-              WebkitTouchCallout: 'default',
-              touchAction: 'manipulation',
-              cursor: 'text',
-            }}
+            style={
+              {
+                WebkitUserSelect: 'text',
+                userSelect: 'text',
+                WebkitTouchCallout: 'none', // 모바일 기본 선택 메뉴 비활성화
+                touchAction: 'manipulation',
+                cursor: 'text',
+              } as React.CSSProperties
+            }
           >
             {solution.content}
           </div>
@@ -360,7 +377,7 @@ export default function SolutionSection({ homeworkId, solution }: SolutionSectio
                 padding: '8px 12px',
                 borderRadius: '8px',
                 boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                zIndex: 50,
+                zIndex: 9999, // 모바일 기본 메뉴보다 높은 z-index
                 cursor: 'pointer',
                 fontWeight: '500',
                 fontSize: '14px',

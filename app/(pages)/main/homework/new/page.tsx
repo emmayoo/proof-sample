@@ -40,6 +40,7 @@ export default function NewPostPage() {
         alert('오류: ' + error.message)
       } else {
         alert('저장되었습니다!')
+        // 목록 페이지로 이동 (SSR로 최신 데이터 자동 로드)
         router.push('/main/homework')
       }
     } catch (error) {
