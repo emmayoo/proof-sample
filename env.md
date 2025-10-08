@@ -1,0 +1,4 @@
+# .env.local에 추가
+
+NEXT_PUBLIC_SUPABASE_URL=https://rqvkmybnnatuxkdbislq.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxdmtteWJubmF0dXhrZGJpc2xxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk3NTcyODEsImV4cCI6MjA3NTMzMzI4MX0.uvUs-99sq7IQXXDhvcdp-m1o20qsMoarTuqHl_gbh7U
