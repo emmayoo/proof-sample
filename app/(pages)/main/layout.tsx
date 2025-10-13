@@ -19,7 +19,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
       {/* 메인 콘텐츠 영역 */}
       <main
-        className={`px-8 pt-16 transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-64' : 'ml-0'} `}
+        className={`ml-4 px-8 transition-all duration-300 ease-in-out ${isSidebarOpen ? 'ml-64' : 'ml-0'} `}
       >
         {children}
       </main>

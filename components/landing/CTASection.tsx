@@ -1,10 +1,10 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -107,18 +107,15 @@ export default function CTASection() {
   }, [])
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-12"
-    >
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#254d3b] py-12">
       {/* Dynamic background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_50%,transparent_75%)] bg-[size:20px_20px]"></div>
 
       {/* Animated floating orbs */}
-      <div className="absolute top-1/4 left-1/4 h-32 w-32 animate-pulse rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-3xl"></div>
-      <div className="absolute right-1/4 bottom-1/4 h-40 w-40 animate-pulse rounded-full bg-gradient-to-r from-purple-400/15 to-pink-400/15 blur-3xl delay-1000"></div>
-      <div className="absolute top-1/2 right-1/3 h-24 w-24 animate-pulse rounded-full bg-gradient-to-r from-indigo-400/25 to-blue-400/25 blur-2xl delay-500"></div>
+      <div className="absolute top-1/4 left-1/4 h-32 w-32 animate-pulse rounded-full bg-gradient-to-r from-white/10 to-white/5 blur-3xl"></div>
+      <div className="absolute right-1/4 bottom-1/4 h-40 w-40 animate-pulse rounded-full bg-gradient-to-r from-white/8 to-white/3 blur-3xl delay-1000"></div>
+      <div className="absolute top-1/2 right-1/3 h-24 w-24 animate-pulse rounded-full bg-gradient-to-r from-white/12 to-white/6 blur-2xl delay-500"></div>
 
       {/* Subtle moving gradient overlay */}
       <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent delay-700"></div>
@@ -140,7 +137,7 @@ export default function CTASection() {
           <div className="feature-card text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
               <svg
-                className="h-8 w-8 text-blue-400"
+                className="h-8 w-8 text-white/80"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -160,7 +157,7 @@ export default function CTASection() {
           <div className="feature-card text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
               <svg
-                className="h-8 w-8 text-green-400"
+                className="h-8 w-8 text-white/80"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -180,7 +177,7 @@ export default function CTASection() {
           <div className="feature-card text-center">
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
               <svg
-                className="h-8 w-8 text-purple-400"
+                className="h-8 w-8 text-white/80"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

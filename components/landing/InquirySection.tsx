@@ -89,27 +89,21 @@ export default function InquirySection() {
   }
 
   return (
-    <section
-      id="contact"
-      ref={sectionRef}
-      className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 py-12"
-    >
+    <section id="contact" ref={sectionRef} className="relative overflow-hidden bg-[#254d3b] py-12">
       {/* Enhanced background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,119,198,0.1),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.03),transparent_50%)]"></div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <div className="mb-16 text-center">
           <h2
             ref={titleRef}
-            className="mb-4 text-3xl font-black text-gray-900 md:text-4xl lg:text-5xl"
+            className="mb-4 text-3xl font-black text-white md:text-4xl lg:text-5xl"
           >
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              문의하기
-            </span>
+            <span className="text-white">문의하기</span>
           </h2>
-          <p className="mx-auto max-w-3xl text-lg text-gray-700">
+          <p className="mx-auto max-w-3xl text-lg text-white/90">
             Puroo에 대해 궁금한 점이 있으시거나 도입을 검토 중이시라면 언제든지 연락주세요.
             <br />
             전문 상담을 제공해드립니다.
@@ -119,13 +113,13 @@ export default function InquirySection() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left Column - Contact Information */}
           <div ref={leftRef} className="space-y-8">
-            <h3 className="mb-6 text-2xl font-bold text-gray-900">연락처 정보</h3>
+            <h3 className="mb-6 text-2xl font-bold text-white">연락처 정보</h3>
 
             {/* Phone */}
             <div className="group flex items-start space-x-4 rounded-2xl bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 transition-transform group-hover:scale-110">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:scale-110">
                 <svg
-                  className="h-6 w-6 text-blue-600"
+                  className="h-6 w-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -140,16 +134,16 @@ export default function InquirySection() {
               </div>
               <div>
                 <h4 className="mb-1 font-semibold text-gray-900">전화 문의</h4>
-                <p className="text-lg font-bold text-blue-600">02-1234-5678</p>
+                <p className="text-lg font-bold text-[#254d3b]">02-1234-5678</p>
                 <p className="text-sm text-gray-600">평일 09:00 - 18:00</p>
               </div>
             </div>
 
             {/* Email */}
             <div className="group flex items-start space-x-4 rounded-2xl bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100 transition-transform group-hover:scale-110">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:scale-110">
                 <svg
-                  className="h-6 w-6 text-green-600"
+                  className="h-6 w-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -164,16 +158,16 @@ export default function InquirySection() {
               </div>
               <div>
                 <h4 className="mb-1 font-semibold text-gray-900">이메일 문의</h4>
-                <p className="text-lg font-bold text-green-600">contact@puroo.ai</p>
+                <p className="text-lg font-bold text-[#254d3b]">contact@puroo.ai</p>
                 <p className="text-sm text-gray-600">24시간 접수 가능</p>
               </div>
             </div>
 
             {/* Address */}
             <div className="group flex items-start space-x-4 rounded-2xl bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-purple-100 transition-transform group-hover:scale-110">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:scale-110">
                 <svg
-                  className="h-6 w-6 text-purple-600"
+                  className="h-6 w-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -194,20 +188,20 @@ export default function InquirySection() {
               </div>
               <div>
                 <h4 className="mb-1 font-semibold text-gray-900">오피스 주소</h4>
-                <p className="text-lg font-bold text-purple-600">서울특별시 강남구 테헤란로 123</p>
+                <p className="text-lg font-bold text-[#254d3b]">서울특별시 강남구 테헤란로 123</p>
                 <p className="text-sm text-gray-600">Puroo 빌딩 10층</p>
               </div>
             </div>
 
             {/* Academy Consultation */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 p-8 text-white shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20"></div>
+            <div className="relative overflow-hidden rounded-2xl bg-white/90 p-8 text-[#254d3b] shadow-2xl">
+              <div className="absolute inset-0 bg-white/10"></div>
               <div className="relative z-10">
                 <h4 className="mb-3 text-xl font-bold">🏫 학원 도입 전용 상담</h4>
-                <p className="mb-6 leading-relaxed text-purple-100">
+                <p className="mb-6 leading-relaxed text-gray-600">
                   학원 도입이나 대량 구매를 검토 중이시라면 전담 컨설턴트와 1:1 상담을 받아보세요.
                 </p>
-                <button className="group flex items-center space-x-2 rounded-xl bg-white px-6 py-3 font-semibold text-purple-600 transition-all duration-300 hover:scale-105 hover:bg-purple-50">
+                <button className="group flex items-center space-x-2 rounded-xl bg-[#254d3b] px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-[#1e3a2f]">
                   <svg
                     className="h-5 w-5 transition-transform group-hover:rotate-12"
                     fill="none"
@@ -337,7 +331,7 @@ export default function InquirySection() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="group w-full rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4 text-lg font-bold text-white transition-all duration-300 hover:scale-105 hover:from-blue-700 hover:to-purple-700 hover:shadow-2xl hover:shadow-blue-500/25"
+                  className="group w-full rounded-xl bg-[#254d3b] px-6 py-4 text-lg font-bold text-white transition-all duration-300 hover:scale-105 hover:bg-[#1e3a2f] hover:shadow-2xl hover:shadow-[#254d3b]/25"
                 >
                   <span className="flex items-center justify-center space-x-2">
                     <svg
@@ -364,7 +358,7 @@ export default function InquirySection() {
 
       {/* Chat Widget */}
       <div className="fixed right-6 bottom-6 z-50">
-        <button className="group flex items-center space-x-3 rounded-full bg-blue-600 px-6 py-3 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-blue-700 hover:shadow-blue-500/25">
+        <button className="group flex items-center space-x-3 rounded-full bg-[#254d3b] px-6 py-3 text-white shadow-2xl transition-all duration-300 hover:scale-110 hover:bg-[#1e3a2f] hover:shadow-[#254d3b]/25">
           <svg
             className="h-5 w-5 transition-transform group-hover:rotate-12"
             fill="none"

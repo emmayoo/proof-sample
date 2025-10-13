@@ -178,3 +178,16 @@ html {
   touch-action: manipulation;
   cursor: text;
 }
+
+/* Handwriting font style */
+.font-handwriting {
+  font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+  font-weight: 500;
+}
+
+/* Rounded font style */
+.font-rounded {
+  font-family: 'Nunito', 'Poppins', 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}

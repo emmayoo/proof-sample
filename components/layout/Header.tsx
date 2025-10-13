@@ -1,6 +1,6 @@
 'use client'
 
-import { Menu } from 'lucide-react'
+import { Menu, Search, User } from 'lucide-react'
 
 interface HeaderProps {
   onMenuToggle: () => void
@@ -22,7 +22,10 @@ export default function Header({ onMenuToggle }: HeaderProps) {
         </div>
 
         {/* 오른쪽 */}
-        <div className="flex items-center space-x-2"></div>
+        <div className="flex items-center space-x-4">
+          <Search className="h-6 w-6 text-gray-600" />
+          <User className="h-6 w-6 text-gray-600" />
+        </div>
       </div>
     </header>
   )
